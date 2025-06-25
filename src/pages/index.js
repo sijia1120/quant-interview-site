@@ -1,43 +1,81 @@
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import React from 'react';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-
-import Heading from '@theme/Heading';
-import styles from './index.module.css';
-
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div>
-      </div>
-    </header>
-  );
-}
+import Link from '@docusaurus/Link';
 
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
-      <main>
-        <HomepageFeatures />
+      title="Scarlett's Quant Interview Hub"
+      description="A curated guide for quant interviews">
+      <main style={{padding: '2rem 1rem', textAlign: 'center'}}>
+        <h1 style={{fontSize: '3rem', marginBottom: '1rem'}}>🎓 Scarlett's Quant Interview Hub</h1>
+        <p style={{fontSize: '1.2rem', marginBottom: '2.5rem'}}>Select a section below to begin preparing:</p>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+          gap: '1.5rem',
+          maxWidth: '1000px',
+          margin: '0 auto'
+        }}>
+          {sections.map(({title, emoji, link, description}) => (
+            <Link
+              key={link}
+              to={link}
+              style={{
+                border: '1px solid #ccc',
+                borderRadius: '12px',
+                padding: '1.5rem',
+                textDecoration: 'none',
+                backgroundColor: '#fff',
+                boxShadow: '0 2px 6px rgba(0,0,0,0.05)',
+              }}
+            >
+              <h2>{emoji} {title}</h2>
+              <p style={{color: '#444'}}>{description}</p>
+            </Link>
+          ))}
+        </div>
       </main>
     </Layout>
   );
 }
+
+const sections = [
+  {
+    title: 'Quant Questions',
+    emoji: '📊',
+    link: '/docs/questions',
+    description: 'Math, brainteasers, and probability questions.',
+  },
+  {
+    title: 'Learning',
+    emoji: '📚',
+    link: '/docs/learning',
+    description: 'Notes, concepts, and tutorials.',
+  },
+  {
+    title: 'Coding',
+    emoji: '💻',
+    link: '/docs/coding',
+    description: 'Python, Leetcode-style problems and solutions.',
+  },
+  {
+    title: 'Machine Learning',
+    emoji: '🤖',
+    link: '/docs/machine-learning',
+    description: 'ML theory & application in quant roles.',
+  },
+  {
+    title: 'Soft Questions',
+    emoji: '💬',
+    link: '/docs/soft',
+    description: 'Behavioral & communication interview prep.',
+  },
+  {
+    title: 'Contact',
+    emoji: '📩',
+    link: '/contact',
+    description: 'Reach out for collaboration or feedback.',
+  },
+];

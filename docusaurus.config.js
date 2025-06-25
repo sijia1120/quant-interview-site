@@ -1,7 +1,8 @@
 // @ts-check
 
 import {themes as prismThemes} from 'prism-react-renderer';
-
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'My Site',
@@ -15,7 +16,7 @@ const config = {
   url: 'https://your-docusaurus-site.example.com',
   baseUrl: '/',
 
-  organizationName: 'facebook', // 改成你的 GitHub 用户名（部署时用）
+  organizationName: 'sijia1120', // 改成你的 GitHub 用户名（部署时用）
   projectName: 'docusaurus',    // 改成你的 GitHub 仓库名
 
   onBrokenLinks: 'throw',
@@ -26,16 +27,6 @@ const config = {
     locales: ['en'],
   },
 
-  stylesheets: [
-    {
-      href: 'https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css',
-      type: 'text/css',
-      integrity:
-        'sha384-vZTG03m+z9gLGpko+Bt7YfZJv0mPH0VEWilQo35gQgCz1Lk3M8ljkVjXlR9F4r2Q',
-      crossorigin: 'anonymous',
-    },
-  ],
-
   presets: [
     [
       'classic',
@@ -43,8 +34,8 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          remarkPlugins: [require('remark-math')],
-          rehypePlugins: [require('rehype-katex')],
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
@@ -61,10 +52,20 @@ const config = {
           onUntruncatedBlogPosts: 'warn',
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve('./src/css/custom-cfa-style.css'),
         },
       }),
     ],
+  ],
+
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+      type: 'text/css',
+      integrity:
+        'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+      crossorigin: 'anonymous',
+    },
   ],
 
   themeConfig:
@@ -72,23 +73,42 @@ const config = {
     ({
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: "Scarlett Quant Hub",
         logo: {
-          alt: 'My Site Logo',
+          alt: "Scarlett Logo",
+          src: "img/logo.svg",
+        },
+        items: [
+          { to: "/docs/questions", label: "📊 Quant", position: "left" },
+          { to: "/docs/learning", label: "📚 Learning", position: "left" },
+          { to: "/docs/coding", label: "💻 Coding", position: "left" },
+          { to: "/docs/machine-learning", label: "🤖 ML", position: "left" },
+          { to: "/docs/soft", label: "💬 Soft", position: "left" },
+          { to: "/contact", label: "📬 Contact", position: "left" },
+          {
+            href: "https://github.com/sijia1120/quant-interview-site",
+            label: "GitHub",
+            position: "right",
+          },
+        ],
+      },
+      navbar: {
+        title: 'Scarlett Quant Hub',
+        logo: {
+          alt: 'Scarlett Logo',
           src: 'img/logo.svg',
         },
         items: [
+          { to: "/docs/questions", label: "📊 Questions", position: "left" },
+          { to: "/docs/learning", label: "📚 Learning", position: "left" },
+          { to: "/docs/coding", label: "💻 Coding", position: "left" },
+          { to: "/docs/machine-learning", label: "🤖 ML", position: "left" },
+          { to: "/docs/soft", label: "💬 Soft", position: "left" },
+          { to: "/contact", label: "📬 Contact", position: "left" },
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Tutorial',
-          },
-          {to: '/blog', label: 'Blog', position: 'left'},
-          {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
+            href: "https://github.com/sijia1120/quant-interview-site",
+            label: "GitHub",
+            position: "right",
           },
         ],
       },
