@@ -1,7 +1,7 @@
 ---
 id: index
 title: Probability Questions
-sidebar_label: Overview
+sidebar_label: Probability Questions
 slug: /questions/probability
 ---
 
