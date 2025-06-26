@@ -1,0 +1,3 @@
+#### 📖 Q1: A line of 100 airline passengers are waiting to board a plane. They each hold a ticket toone of the 100 seats on that flight. For convenience, let's say that the n-th passenger in line has a ticket for the seat number n. Being drunk, the first person in line picks a random seat (equally likely for each seat). All of the other passengers are sober, and will go to their proper seats unless it is already occupied; In that case, they will randomly choose a free seat. You're person number 100. What is the probability that you end up in your seat (i.e., seat #100) ? 
+
+If passenger 1 goes to seat #1, 100% that person number 100 goes to seat #100; if passenger 1 does not go to seat #1
