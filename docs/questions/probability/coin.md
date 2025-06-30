@@ -2,7 +2,7 @@
 id: coin
 title: Fair Coin and Unfair Coin
 sidebar_label: Coin
-difficulty: easy
+difficulty: easy - medium
 source: Red Book
 topics: []
 tags: []
@@ -27,4 +27,27 @@ P(unfair coin|HH) P(HH) = P(HH|unfair coin) P(unfair coin); As P(HH) = P( HH|unf
 Assume the $P(head) = p$ and $P(tail) = 1-p$; The probability of first head and second tail is $p *(1-p)$ and the probability of first tail and second head if $(1-p)p$.  By assigning HT to winning and TH to losing, we can generate even odds. 
 
 
+&nbsp;
+
+#### 📖 **Q4 Coin toss game**: <p style={{ textAlign: "justify" }}>Two players, A and B, alternatively toss a fair coin (A tosses the coin first, then B tosses the coin, then A, then B...). The sequence of heads and tails is recorded. If there is a lead followed by a tall (HT subsequence), the game ends and the person who tosses the tail wins. What is the probability that A wins the game? </p>
+
+Let $P(A)$ be the probability that A wins. Let’s condition on A's first toss (since A goes first):
+
+- With probability $\frac{1}{2}$, A tosses a T.
+- With probability $\frac{1}{2}$, A tosses a H. 
+
+If A tosses a T. Now it's B's turn. This effectively restarts the game, but with B as the new "first" player. And B(first player) wanna win, A has to lose. So $P(A \mid \text{first toss = T}) = 1 - P(A)$.
+
+If A tosses a H. B tosses next, if B tosses T, A loses. if B tosses H, B becomes the first player and $P(A|H) = \frac{1}{2} \times 0 + \frac{1}{2} \times (1 -P(A|H)) $ $\Rightarrow P(A|H) = 1/3$. 
+
+Combining all the available information, we have 
+$$
+P(A) = P(A \mid \text{first toss = T}) P(T) + P(A \mid \text{first toss = H}) P(H)
+$$
+
+$$
+P(A) = (1-P(A)) \times 1/2 + 1/3 \times 1/2 \Rightarrow P(A) = 4/9
+$$
+
+Answer: P(A)= 4/9
 

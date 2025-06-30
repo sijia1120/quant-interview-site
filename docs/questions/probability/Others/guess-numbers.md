@@ -1,7 +1,7 @@
 ---
 id: guess-numbers
-title: Pick a Number and Guess
-sidebar_label: Pick a Number and Guess
+title: Guess a Number
+sidebar_label: Guess a Number
 difficulty: medium
 source: Red Book
 topics: []
