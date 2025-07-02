@@ -17,6 +17,21 @@ Answer: 3.5
 
 &nbsp;
 
+#### 📖 Q2 Dice game: <p style={{ textAlign: "justify" }}> Suppose that you roll a dice. For each roll, you are paid the face value. If a roll gives 4, 5 or 6, you can roll the dice again. Once you get 1, 2 or 3, the game stops. What is the expected payoff of this game? </p> 
+
+
+
+
+Let $E$ be the expected total payoff. With probability $\frac{1}{2}$, you roll a 1, 2, or 3 and the game ends. The expected payoff in this case is: $\frac{1}{6}(1 + 2 + 3) = 1$. With probability $\frac{1}{2}$, you roll a 4, 5, or 6 and continue the game. The expected value of such a roll is: $\frac{1}{6}(4 + 5 + 6) = 5$. But since you roll again after this, the total expected value becomes: $5 + E$
+
+Putting it all together:
+
+$$
+E = \frac{1}{2} \cdot 2 + \frac{1}{2} \cdot (5 + E) \Rightarrow E = \boxed{7}
+$$
+
+&nbsp;
+
 #### 📖 Q2: <p style={{ textAlign: "justify" }}> Suppose we play a game. I roll a die up to three times. Each time I roll, you can either take the number showing as dollars, or roll again. What is your expected winnings? </p> 
 $$ 
 E[\text{ 1 die}] = 3.5 

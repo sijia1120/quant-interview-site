@@ -37,6 +37,8 @@ $$
 P(N(t) = k) = \frac{(\lambda t)^k}{k!} e^{-\lambda t}, \quad k = 0, 1, 2, ...
 $$
 
+- Expected value:  $\mathbb{E}[N(t)=x] = \lambda t$; $\mathbb{Var}[T] = \lambda t$.
+
 This is a **Poisson distribution** with parameter $ \lambda t $.
 
 ---
@@ -51,7 +53,36 @@ Exponential distribution is widely used to model the time interval between indep
 - **Expected value**:  $\mathbb{E}[T] = \frac{1}{\lambda}$; $\mathbb{Var}[T] = \frac{1}{\lambda^2}$.
 
 
-- **Memoryless property**:  $P(T > s + t \mid T > s) = P(T > t)$, which means if we have waited for $s$ time units, the extra waiting time has he same distribution as the waiting time when we start at time 0. 
+- **Memoryless property**:  $P(T > s + t \mid T > s) = P(T > t)$, which means if we have waited for $s$ time units, the extra waiting time has he same distribution as the waiting time when we start at time 0. Because of the memoryless nature of exponential distribution, the number of arrivals between time $s$ and $t$ is also a Poisson process.  
+
+Relationship between Exponential Distribution and Poisson Process is that when the arrivals of a series of events each independently follow an exponential distribution with arrival rate $\lambda$, the number of arrivals between time $0$ and $t$ can be modelled as a Poisson process $P(N(t) =x) = \frac{e^{-\lambda t} \lambda t^x}{x!}, \quad x = 0,1,...$
+
+---
+
+
+### ⏱ 3. Expected residual lifetime
+
+When you arrive at a random time to observe a recurring event (like waiting for a bus), your expected waiting time until the **next event** is not always $ \mathbb{E}[X]/2 $. Instead, for a general interarrival time distribution $X$, the expected residual (or remaining) life is:
+
+$$
+\boxed{
+\text{Expected residual life} = \frac{\mathbb{E}[X^2]}{2\mathbb{E}[X]}
+}
+$$
+
+If $ X \sim \text{Exponential}(\lambda) $, then:
+
+- $ \mathbb{E}[X] = \frac{1}{\lambda} $
+- $ \mathbb{E}[X^2] = \frac{2}{\lambda^2} $
+
+Plug into the formula:
+
+$$
+\text{Expected residual life} = \frac{2/\lambda^2}{2/\lambda} = \frac{1}{\lambda} = \mathbb{E}[X]
+$$
+
+This confirms the **memoryless** property of the exponential distribution:
+No matter when you arrive, your expected wait is always the same.
 
 ---
 
