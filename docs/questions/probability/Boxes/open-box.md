@@ -12,3 +12,7 @@ $$
 100 = \frac{1}{4} \times X + \frac{3}{4} \cdot \frac{2}{3}  \times (2X) + \frac{3}{4} \cdot \frac{2}{3} \cdot \frac{1}{2} \times (3X) + \frac{3}{4} \cdot \frac{2}{3} \cdot \frac{1}{2} \times (4X)
 $$
 Answer: $X = 40$
+
+- green book
+- red book
+
